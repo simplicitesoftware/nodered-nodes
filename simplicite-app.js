@@ -8,4 +8,5 @@ module.exports = function(RED) {
 		this.password = n.password;
 	}
 	RED.nodes.registerType("simplicite-app", SimpliciteApp);
+	RED.library.register("simplicite-app");
 }

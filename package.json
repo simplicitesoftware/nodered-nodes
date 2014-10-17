@@ -6,7 +6,10 @@
     "type": "git",
     "url": "git://github.com/simplicitesoftware/nodered-api.git"
   },
-  "keywords": [ "simplicite", "apaas" ],
+  "keywords": [
+    "simplicite",
+    "apaas"
+  ],
   "dependencies": {
     "simplicite": "latest"
   },
@@ -21,7 +24,11 @@
       "simplicite-app": "simplicite-app.js"
     }
   },
-  "directories": {		
+  "directories": {
     "icons": "icons"
+  },
+  "main": "simplicite-app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
