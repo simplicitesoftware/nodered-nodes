@@ -1,9 +1,7 @@
 module.exports = function(RED) {
 	function SimpliciteAppNode(n) {
 		RED.nodes.createNode(this, n);
-		this.host = n.host;
-		this.port = n.port;
-		this.root = n.root;
+		this.baseurl = n.baseurl;
 		this.login = n.login;
 		this.password = n.password;
 	}
