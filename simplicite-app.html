@@ -1,0 +1,29 @@
+<script type="text/javascript">
+RED.nodes.registerType('simplicite-app',{
+    category: 'config',
+    defaults: {
+		baseurl: { value: "http://localhost/myapp", required: true },
+		login: { value: "", required: false },
+		password: { value: "", required: false },
+    },
+	label: function() {
+		return this.login + "@" + this.baseurl;
+	}
+});
+</script>
+
+<script type="text/x-red" data-template-name="simplicite-app">
+    <div class="form-row">
+        <label for="node-config-input-baseurl"><i class="icon-bookmark"></i> Base URL</label>
+        <input type="text" id="node-config-input-baseurl" placeholder="Base URL">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-login"><i class="icon-bookmark"></i> Login</label>
+        <input type="text" id="node-config-input-login" placeholder="Login">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-password"><i class="icon-bookmark"></i> Password</label>
+        <input type="text" id="node-config-input-password" placeholder="Password">
+    </div>
+</script>
+
