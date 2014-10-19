@@ -1,19 +1,19 @@
 ![](http://www.simplicitesoftware.com/logos/logo250.png)
 ---
 
-Simplicit&eacute;&reg; NodeRED API
-==================================
+Simplicit&eacute;&reg; NodeRED Nodes
+====================================
 
 Introduction
 ------------
 
-This is the NodeRED API (nodes) for the [Simplicit&eacute;&reg; platform](http://www.simplicitesoftware.com).
+This is the NodeRED nodes for the [Simplicit&eacute;&reg; platform](http://www.simplicitesoftware.com).
 
 To install it:
 
 	npm install node-red-contrib-simplicite
 
-**This is still a __BETA__ stage module, use at your own risks**
+**This is still a (very incomplete) __BETA__ stage module, use at your own risks**
 
 License
 -------
