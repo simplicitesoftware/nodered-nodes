@@ -1,15 +1,12 @@
 {
   "name": "node-red-contrib-simplicite",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Simplicit&eacute;&reg; NodeRED nodes",
   "repository": {
     "type": "git",
     "url": "git://github.com/simplicitesoftware/nodered-api.git"
   },
-  "keywords": [
-    "simplicite",
-    "apaas"
-  ],
+  "keywords": [ "simplicite", "simplicitesoftware", "apaas" ],
   "dependencies": {
     "simplicite": "latest"
   },

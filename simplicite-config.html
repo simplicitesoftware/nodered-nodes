@@ -1,0 +1,38 @@
+<script type="text/javascript">
+RED.nodes.registerType("simplicite-config", {
+	category: "config",
+	defaults: {
+		host: { value: "localhost", required: true },
+		port: { value: 8080, required: true, validate:RED.validators.number() },
+		root: { value: "", required: false },
+		user: { value: "designer", required: false },
+		password: { value: "designer", required: false },
+	},
+	label: function() {
+		return this.host + ":" + this.port;
+	}
+});
+</script>
+
+<script type="text/x-red" data-template-name="simplicite-config">
+    <div class="form-row">
+        <label for="node-config-input-host"><i class="icon-bookmark"></i> Host</label>
+        <input type="text" id="node-config-input-host">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-port"><i class="icon-bookmark"></i> Port</label>
+        <input type="text" id="node-config-input-port">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-host"><i class="icon-bookmark"></i> Root</label>
+        <input type="text" id="node-config-input-root">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-host"><i class="icon-bookmark"></i> User</label>
+        <input type="text" id="node-config-input-user">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-host"><i class="icon-bookmark"></i> Password</label>
+        <input type="text" id="node-config-input-password">
+    </div>
+</script>
