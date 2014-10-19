@@ -11,7 +11,7 @@ This is the NodeRED API (nodes) for the [Simplicit&eacute;&reg; platform](http:/
 
 To install it:
 
-	npm install simplicite-nodered
+	npm install node-red-contrib-simplicite
 
 **This is still a __BETA__ stage module, use at your own risks**
 
