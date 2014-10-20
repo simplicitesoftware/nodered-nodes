@@ -1,10 +1,10 @@
 {
   "name": "node-red-contrib-simplicite",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Simplicit&eacute;&reg; NodeRED nodes",
   "repository": {
     "type": "git",
-    "url": "git://github.com/simplicitesoftware/nodered-api.git"
+    "url": "git://github.com/simplicitesoftware/nodered-nodes.git"
   },
   "keywords": [ "simplicite", "simplicitesoftware", "apaas" ],
   "dependencies": {
@@ -13,9 +13,9 @@
   "author": "Simplicite Software <contact@simplicitesoftware.com> (http://www.simplicitesoftware.com/)",
   "license": "Apache",
   "bugs": {
-    "url": "https://github.com/simplicitesoftware/nodered-api/issues"
+    "url": "https://github.com/simplicitesoftware/nodered-nodes/issues"
   },
-  "homepage": "https://github.com/simplicitesoftware/nodered-api",
+  "homepage": "https://github.com/simplicitesoftware/nodered-nodes",
   "node-red": {
     "nodes": {
       "simplicite-app": "simplicite-app.js"
