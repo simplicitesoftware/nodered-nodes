@@ -10,13 +10,40 @@ module.exports = function(RED) {
 				var obj = this.server.session.getBusinessObject(config.objectname);
 				var action = params.action ? params.action : "metadata";
 				if (action == "metadata") {
-					obj.getMetadata({ context: params.context }).then(function(metadata) {
-						msg.payload = metadata;
+					obj.getMetadata(params).then(function() {
+						msg.payload = obj;
 						node.send(msg);
 					});
+				} else if (action == "search") {
+					obj.search(params).then(function() {
+						msg.payload = obj;
+						node.send(msg);
+					});
+				} else if (action == "get") {
+					obj.get(params.row_id).then(function() {
+						msg.payload = obj;
+						node.send(msg);
+					});
+				/*} else if (action == "create") {
+					obj.create(params).then(function() {
+						msg.payload = obj;
+						node.send(msg);
+					});
+				} else if (action == "update") {
+					obj.update(params).then(function() {
+						msg.payload = obj;
+						node.send(msg);
+					});
+				} else if (action == "delete") {
+					obj.del(params).then(function() {
+						msg.payload = obj;
+						node.send(msg);
+					});*/
 				} else {
-					msg.payload = "Unknown action [" + action + "]";
-					node.send(msg);
+					obj.action(action, params).then(function(res) {
+						msg.payload = res;
+						node.send(msg);
+					});
 				}
 			} else {
 				msg.payload = "No configuration";
