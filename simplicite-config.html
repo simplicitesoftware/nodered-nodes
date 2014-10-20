@@ -4,9 +4,9 @@ RED.nodes.registerType("simplicite-config", {
 	defaults: {
 		host: { value: "localhost", required: true },
 		port: { value: 8080, required: true, validate:RED.validators.number() },
-		root: { value: "", required: false },
-		user: { value: "designer", required: false },
-		password: { value: "designer", required: false },
+		root: { value: "" },
+		user: { value: "designer" },
+		password: { value: "designer" },
 	},
 	label: function() {
 		return this.host + ":" + this.port;

@@ -5,7 +5,7 @@ RED.nodes.registerType("simplicite-object", {
 	defaults: {
 		name: { value: "" },
 		server: { value: "", type: "simplicite-config" },
-		objectname: { value: "" }
+		objectname: { value: "", required: true }
 	},
 	inputs: 1,
 	outputs: 1,

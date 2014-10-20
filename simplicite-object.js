@@ -4,14 +4,24 @@ module.exports = function(RED) {
 		var node = this;
 		this.on("input", function(msg) {
 			var params = msg.payload;
+			if (!params) params = {};
 			this.server = RED.nodes.getNode(config.server);
 			if (this.server) {
 				var obj = this.server.session.getBusinessObject(config.objectname);
-				// Tmp
-				msg.payload = obj;
+				var action = params.action ? params.action : "metadata";
+				if (action == "metadata") {
+					obj.getMetadata({ context: params.context }).then(function(metadata) {
+						msg.payload = metadata;
+						node.send(msg);
+					});
+				} else {
+					msg.payload = "Unknown action [" + action + "]";
+					node.send(msg);
+				}
+			} else {
+				msg.payload = "No configuration";
 				node.send(msg);
-			} else
-				console.log("No configuration");
+			}
 		});
 	}
 	RED.nodes.registerType("simplicite-object", SimpliciteObject);
