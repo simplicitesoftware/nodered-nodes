@@ -8,35 +8,40 @@ module.exports = function(RED) {
 			this.server = RED.nodes.getNode(config.server);
 			if (this.server) {
 				var obj = this.server.session.getBusinessObject(config.objectname);
-				var action = params.action ? params.action : "metadata";
-				if (action == "metadata") {
+				var action = params.action ? params.action : "";
+				if (action == "") {
+					msg.payload = obj;
+					node.send(msg);
+				} else if (action == "metadata") {
 					obj.getMetadata(params).then(function() {
-						msg.payload = obj;
+						msg.payload = obj.metadata;
 						node.send(msg);
 					});
 				} else if (action == "search") {
 					obj.search(params).then(function() {
-						msg.payload = obj;
+						msg.payload = { count: obj.count, list: obj.list };
+						if (obj.page) msg.payload.page = obj.page;
+						if (obj.maxpage) msg.payload.maxpage = obj.maxpage;
 						node.send(msg);
 					});
 				} else if (action == "get") {
 					obj.get(params.row_id).then(function() {
-						msg.payload = obj;
+						msg.payload = obj.item;
 						node.send(msg);
 					});
 				/*} else if (action == "create") {
 					obj.create(params).then(function() {
-						msg.payload = obj;
+						msg.payload = obj.item;
 						node.send(msg);
 					});
 				} else if (action == "update") {
 					obj.update(params).then(function() {
-						msg.payload = obj;
+						msg.payload = obj.item;
 						node.send(msg);
 					});
 				} else if (action == "delete") {
 					obj.del(params).then(function() {
-						msg.payload = obj;
+						msg.payload = {};
 						node.send(msg);
 					});*/
 				} else {
