@@ -11,9 +11,14 @@ module.exports = function(RED) {
 						msg.payload.system = sysinfo;
 						node.send(msg);
 					});
+				}, function(e) {
+					msg.payload = { error: { message: e.message ? e.message : e } };
+					node.send(msg);
 				});
-			} else
-				console.log("No configuration");
+			} else {
+				msg.payload = { error: { message: "No configuration" } };
+				node.send(msg);
+			}
 		});
 	}
 	RED.nodes.registerType("simplicite-info", SimpliciteInfo);

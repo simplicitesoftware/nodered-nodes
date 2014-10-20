@@ -8,9 +8,14 @@ module.exports = function(RED) {
 				this.server.session.getGrant(msg.payload).then(function(grant) {
 					msg.payload = grant;
 					node.send(msg);
+				}, function(e) {
+					msg.payload = { error: { message: e.message ? e.message : e } };
+					node.send(msg);
 				});
-			} else
-				console.log("No configuration");
+			} else {
+				msg.payload = { error: { message: "No configuration" } };
+				node.send(msg);
+			}
 		});
 	}
 	RED.nodes.registerType("simplicite-grant", SimpliciteGrant);

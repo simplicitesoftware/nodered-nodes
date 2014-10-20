@@ -7,6 +7,7 @@ module.exports = function(RED) {
 			root: n.root,
 			user: n.user,
 			password: n.password,
+			//errorHandler: function(e) { console.log("Error [" + e + "]"); throw e; },
 			debug: true
 		});
 	}

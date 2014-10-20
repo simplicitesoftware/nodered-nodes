@@ -8,13 +8,19 @@ module.exports = function(RED) {
 			this.server = RED.nodes.getNode(config.server);
 			if (this.server) {
 				var obj = this.server.session.getBusinessObject(config.objectname);
-				var action = params.action ? params.action : "";
+				var action = undefined;
+				if (params.action) action = params.action;
+				if (config.action) action = config.action;
+				if (!action) action = "";
 				if (action == "") {
 					msg.payload = obj;
 					node.send(msg);
 				} else if (action == "metadata") {
 					obj.getMetadata(params).then(function() {
 						msg.payload = obj.metadata;
+						node.send(msg);
+					}, function(e) {
+						msg.payload = { error: { message: e.message ? e.message : e } };
 						node.send(msg);
 					});
 				} else if (action == "search") {
@@ -23,35 +29,53 @@ module.exports = function(RED) {
 						if (obj.page) msg.payload.page = obj.page;
 						if (obj.maxpage) msg.payload.maxpage = obj.maxpage;
 						node.send(msg);
+					}, function(e) {
+						msg.payload = { error: { message: e.message ? e.message : e } };
+						node.send(msg);
 					});
 				} else if (action == "get") {
 					obj.get(params.row_id).then(function() {
 						msg.payload = obj.item;
+						node.send(msg);
+					}, function(e) {
+						msg.payload = { error: { message: e.message ? e.message : e } };
 						node.send(msg);
 					});
 				/*} else if (action == "create") {
 					obj.create(params).then(function() {
 						msg.payload = obj.item;
 						node.send(msg);
+					}, function(e) {
+						msg.payload = { error: { message: e.message ? e.message : e } };
+						node.send(msg);
 					});
 				} else if (action == "update") {
 					obj.update(params).then(function() {
 						msg.payload = obj.item;
 						node.send(msg);
-					});
+					}, function(e) {
+						msg.payload = { error: { message: e.message ? e.message : e } };
+						node.send(msg);
+					})
 				} else if (action == "delete") {
 					obj.del(params).then(function() {
 						msg.payload = {};
+						node.send(msg);
+					}, function(e) {
+						msg.payload = { error: { message: e.message ? e.message : e } };
 						node.send(msg);
 					});*/
 				} else {
 					obj.action(action, params).then(function(res) {
 						msg.payload = res;
 						node.send(msg);
+					}, function(e) {
+						msg.payload = { error: { message: e.message ? e.message : e } };
+						node.send(msg);
 					});
 				}
 			} else {
-				msg.payload = "No configuration";
+				msg.payload = { error: { message: "No configuration" } };
 				node.send(msg);
 			}
 		});

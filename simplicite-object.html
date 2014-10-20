@@ -5,7 +5,8 @@ RED.nodes.registerType("simplicite-object", {
 	defaults: {
 		name: { value: "" },
 		server: { value: "", type: "simplicite-config" },
-		objectname: { value: "", required: true }
+		objectname: { value: "", required: true },
+		action: { value: "" }
 	},
 	inputs: 1,
 	outputs: 1,
@@ -29,8 +30,20 @@ RED.nodes.registerType("simplicite-object", {
 	<label for="node-input-objectname"><i class="icon-tag"></i> Business object name</label>
 	<input type="text" id="node-input-objectname">
 </div>
+<div class="form-row">
+	<label for="node-input-action"><i class="icon-tag"></i> Action</label>
+	<input type="text" id="node-input-action">
+</div>
 </script>
 
 <script type="text/x-red" data-help-name="simplicite-object">
 <p>A simple node that gets Simplicite(R) business object</p>
+<p>Optional action can be either:
+<ul>
+	<li><b>metadata</b> to get objet metadata</li>
+	<li><b>search</b> to search records based on filters</li>
+	<li><b>get</b> to get one record</li>
+	<li><b>...<b></li>
+</ul>
+<p>If no action is specified the full current cached object is returned</p>
 </script>
