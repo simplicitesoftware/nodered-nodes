@@ -9,14 +9,17 @@ module.exports = function(RED) {
 			if (this.server) {
 				var obj = this.server.session.getBusinessObject(config.objectname);
 				var action = undefined;
-				if (params.action) action = params.action;
+				if (params.action) {
+					action = params.action;
+					delete params.action;
+				}
 				if (config.action) action = config.action;
 				if (!action) action = "";
 				if (action == "") {
 					msg.payload = obj;
 					node.send(msg);
 				} else if (action == "metadata") {
-					obj.getMetadata(params).then(function() {
+					obj.getMetadata(params.parameters).then(function() {
 						msg.payload = obj.metadata;
 						node.send(msg);
 					}, function(e) {
@@ -24,7 +27,7 @@ module.exports = function(RED) {
 						node.send(msg);
 					});
 				} else if (action == "search") {
-					obj.search(params).then(function() {
+					obj.search(params.filters, params.parameters).then(function() {
 						msg.payload = { count: obj.count, list: obj.list };
 						if (obj.page) msg.payload.page = obj.page;
 						if (obj.maxpage) msg.payload.maxpage = obj.maxpage;
@@ -34,15 +37,16 @@ module.exports = function(RED) {
 						node.send(msg);
 					});
 				} else if (action == "get") {
-					obj.get(params.row_id).then(function() {
+					obj.get(params.row_id, params.parameters).then(function() {
 						msg.payload = obj.item;
 						node.send(msg);
 					}, function(e) {
 						msg.payload = { error: { message: e.message ? e.message : e } };
 						node.send(msg);
 					});
-				/*} else if (action == "create") {
-					obj.create(params).then(function() {
+				/*
+				} else if (action == "create") {
+					obj.create(params.item, params.parameter).then(function() {
 						msg.payload = obj.item;
 						node.send(msg);
 					}, function(e) {
@@ -50,7 +54,7 @@ module.exports = function(RED) {
 						node.send(msg);
 					});
 				} else if (action == "update") {
-					obj.update(params).then(function() {
+					obj.update(params.item, params.parameters).then(function() {
 						msg.payload = obj.item;
 						node.send(msg);
 					}, function(e) {
@@ -58,15 +62,17 @@ module.exports = function(RED) {
 						node.send(msg);
 					})
 				} else if (action == "delete") {
-					obj.del(params).then(function() {
+					obj.del(params.item, params.parameters).then(function() {
 						msg.payload = {};
 						node.send(msg);
 					}, function(e) {
 						msg.payload = { error: { message: e.message ? e.message : e } };
 						node.send(msg);
-					});*/
+					});
+				TODO : other methods
+				*/
 				} else {
-					obj.action(action, params).then(function(res) {
+					obj.action(action, params.parameters).then(function(res) {
 						msg.payload = res;
 						node.send(msg);
 					}, function(e) {
