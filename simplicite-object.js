@@ -8,13 +8,9 @@ module.exports = function(RED) {
 			this.server = RED.nodes.getNode(config.server);
 			if (this.server) {
 				var obj = this.server.session.getBusinessObject(config.objectname);
-				var action = undefined;
-				if (params.action) {
-					action = params.action;
-					delete params.action;
-				}
+				var action = "";
+				if (params.action) action = params.action;
 				if (config.action) action = config.action;
-				if (!action) action = "";
 				if (action == "") {
 					msg.payload = obj;
 					node.send(msg);
@@ -69,7 +65,7 @@ module.exports = function(RED) {
 						msg.payload = { error: { message: e.message ? e.message : e } };
 						node.send(msg);
 					});
-				TODO : other methods
+				TODO : other actions
 				*/
 				} else {
 					obj.action(action, params.parameters).then(function(res) {

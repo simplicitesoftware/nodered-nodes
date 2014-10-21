@@ -1,23 +1,22 @@
 <script type="text/javascript">
-RED.nodes.registerType("simplicite-object", {
+RED.nodes.registerType("simplicite-session", {
 	category: "function",
-	color: "#00AED1",
+	color: "#63BCCE",
 	defaults: {
 		name: { value: "" },
 		server: { value: "", type: "simplicite-config" },
-		objectname: { value: "", required: true },
 		action: { value: "" }
 	},
 	inputs: 1,
 	outputs: 1,
 	icon: "simplicite.png",
 	label: function() {
-		return this.name || this.objectname || "object";
+		return this.name;
 	}
 });
 </script>
 
-<script type="text/x-red" data-template-name="simplicite-object">
+<script type="text/x-red" data-template-name="simplicite-session">
 <div class="form-row">
 	<label for="node-input-name"><i class="icon-tag"></i> Name</label>
 	<input type="text" id="node-input-name">
@@ -27,23 +26,20 @@ RED.nodes.registerType("simplicite-object", {
 	<input type="text" id="node-input-server">
 </div>
 <div class="form-row">
-	<label for="node-input-objectname"><i class="icon-tag"></i> Business object name</label>
-	<input type="text" id="node-input-objectname">
-</div>
-<div class="form-row">
 	<label for="node-input-action"><i class="icon-tag"></i> Action</label>
 	<input type="text" id="node-input-action">
 </div>
 </script>
 
-<script type="text/x-red" data-help-name="simplicite-object">
-<p>A simple node to handle Simplicite(R) business object level actions</p>
+<script type="text/x-red" data-help-name="simplicite-session">
+<p>A simple node to handle Simplicite(R) session level actions</p>
 <p>Optional action can be either:
 <ul>
-	<li><b>metadata</b> to get objet metadata</li>
-	<li><b>search</b> to search records based on filters</li>
-	<li><b>get</b> to get one record</li>
+	<li><b>grant</b> to get user grant data</li>
+	<li><b>appsession</b> to get application info</li>
+	<li><b>syssession</b> to get system info</li>
+	<li><b>news</b> to get news</li>
 	<li><b>...</b></li>
 </ul>
-<p>If no action is specified the full business object data is returned</p>
+<p>If no action is specified the full session data is returned</p>
 </script>
