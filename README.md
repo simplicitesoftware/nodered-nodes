@@ -9,6 +9,8 @@ Introduction
 
 These are the NodeRED nodes for the [Simplicit&eacute;&reg; platform](http://www.simplicitesoftware.com).
 
+![Simplicit&eacute;&reg; NodeRED nodes](https://raw.githubusercontent.com/simplicitesoftware/nodered-nodes/master/test.png)
+
 To install it:
 
 - install the latest Simplicit&eacute;&reg; Node.js lib (`npm install simplicite`)s
