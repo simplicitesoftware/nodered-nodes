@@ -9,8 +9,8 @@ module.exports = function(RED) {
 			if (this.server) {
 				var obj = this.server.session.getBusinessObject(config.objectname);
 				var action = "";
-				if (params.action) action = params.action;
 				if (config.action) action = config.action;
+				if (params.action) action = params.action;
 				if (action == "") {
 					msg.payload = obj;
 					node.send(msg);

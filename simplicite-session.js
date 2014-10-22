@@ -9,13 +9,13 @@ module.exports = function(RED) {
 			if (this.server) {
 				var session = this.server.session;
 				var action = "";
-				if (params.action) action = params.action;
 				if (config.action) action = config.action;
+				if (params.action) action = params.action;
 				if (action == "") {
 					msg.payload = session;
 					node.send(msg);
 				} else if (action == "grant") {
-					session.getGrant(msg.payload).then(function(grant) {
+					session.getGrant(params.parameters).then(function(grant) {
 						msg.payload = grant;
 						node.send(msg);
 					}, function(e) {
@@ -23,7 +23,7 @@ module.exports = function(RED) {
 						node.send(msg);
 					});
 				} else if (action == "appinfo") {
-					node.server.session.getAppInfo().then(function(appinfo) {
+					node.server.session.getAppInfo(params.parameters).then(function(appinfo) {
 						msg.payload = appinfo;
 						node.send(msg);
 					}, function(e) {
@@ -31,7 +31,7 @@ module.exports = function(RED) {
 						node.send(msg);
 					});
 				} else if (action == "sysinfo") {
-					node.server.session.getSysInfo().then(function(sysinfo) {
+					node.server.session.getSysInfo(params.parameters).then(function(sysinfo) {
 						msg.payload = sysinfo;
 						node.send(msg);
 					}, function(e) {
@@ -39,7 +39,7 @@ module.exports = function(RED) {
 						node.send(msg);
 					});
 				} else if (action == "news") {
-					this.server.session.getNews(msg.payload).then(function(news) {
+					this.server.session.getNews(params.parameters).then(function(news) {
 						msg.payload = news;
 						node.send(msg);
 					}, function(e) {
