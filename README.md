@@ -11,9 +11,12 @@ This is the NodeRED nodes for the [Simplicit&eacute;&reg; platform](http://www.s
 
 To install it:
 
-	npm install node-red-contrib-simplicite
+- install the latest Simplicit&eacute;&reg; Node.js lib (`npm install simplicite`) and add a dependecy to it into the `package.json` of your NodeRED instance.
+- copy the `simplicite-*.*` files and the `icons` folder to a `simplicite` subfloder of your NodeRED instance `nodes` folder and restart it. 
 
-**This is still a (very incomplete) __BETA__ stage module, use at your own risks**
+Check `test*.json` for sample flows (based on the Simplicit&eacute;&reg; demo application).
+
+**This is still an incomplete __BETA__ stage module, use at your own risks**
 
 License
 -------
