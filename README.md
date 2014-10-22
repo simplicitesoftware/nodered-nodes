@@ -11,10 +11,13 @@ This is the NodeRED nodes for the [Simplicit&eacute;&reg; platform](http://www.s
 
 To install it:
 
-- install the latest Simplicit&eacute;&reg; Node.js lib (`npm install simplicite`) and add a dependecy to it into the `package.json` of your NodeRED instance.
-- copy the `simplicite-*.*` files and the `icons` folder to a `simplicite` subfloder of your NodeRED instance `nodes` folder and restart it. 
+- install the latest Simplicit&eacute;&reg; Node.js lib (`npm install simplicite`)s
+and add a dependecy to it into the `package.json` of your NodeRED instance.
+- copy the `simplicite-*.*` files and the `icons` folder to a `simplicite` subfloder
+of your NodeRED instance `nodes` folder and restart it. 
 
-Check `test*.json` for sample flows (based on the Simplicit&eacute;&reg; demo application).
+Check the `test*.json` for sample flows (based on the Simplicit&eacute;&reg; demo application).s
+You will need to change connections settings to yoyr Simplicit&eacute;&reg; instance.
 
 **This is still an incomplete __BETA__ stage module, use at your own risks**
 
