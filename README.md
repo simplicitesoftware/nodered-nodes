@@ -7,7 +7,7 @@ Simplicit&eacute;&reg; NodeRED Nodes
 Introduction
 ------------
 
-This is the NodeRED nodes for the [Simplicit&eacute;&reg; platform](http://www.simplicitesoftware.com).
+These are the NodeRED nodes for the [Simplicit&eacute;&reg; platform](http://www.simplicitesoftware.com).
 
 To install it:
 
