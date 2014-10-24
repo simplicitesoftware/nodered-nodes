@@ -40,8 +40,9 @@ module.exports = function(RED) {
 						msg.payload = { error: { message: e.message ? e.message : e } };
 						node.send(msg);
 					});
-				/*
 				} else if (action == "create") {
+					console.log("CREATE");
+					console.log(params);
 					obj.create(params.item, params.parameter).then(function() {
 						msg.payload = obj.item;
 						node.send(msg);
@@ -65,8 +66,7 @@ module.exports = function(RED) {
 						msg.payload = { error: { message: e.message ? e.message : e } };
 						node.send(msg);
 					});
-				TODO : other actions
-				*/
+				// TODO : other actions
 				} else {
 					obj.action(action, params.parameters).then(function(res) {
 						msg.payload = res;
