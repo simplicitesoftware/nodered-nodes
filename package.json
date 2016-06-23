@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git://github.com/simplicitesoftware/nodered-nodes.git"
   },
-  "keywords": [ "simplicite", "simplicitesoftware", "apaas" ],
+  "keywords": [ "simplicite", "simplicitesoftware", "apaas", "node-red", "bluemix" ],
   "dependencies": {
     "simplicite": "latest"
   },
@@ -18,7 +18,9 @@
   "homepage": "https://github.com/simplicitesoftware/nodered-nodes",
   "node-red": {
     "nodes": {
-      "simplicite-app": "simplicite-app.js"
+      "simplicite-config": "simplicite-config.js",
+      "simplicite-session": "simplicite-session.js",
+	  "simplicite-object": "simplicite-object.js"
     }
   },
   "directories": {
