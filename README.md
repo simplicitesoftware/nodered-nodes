@@ -15,14 +15,9 @@ To add these nodes to your NodeRED instance you just need to add this dependency
 
 ```json
 "dependencies": {
-	(...)
-    "node-red-contrib-simplicite":"latest",
-	(...)
+    "node-red-contrib-simplicite":"latest"
 }
 ```
-
-To test the nodes you can import the `test*.json` that contains sample flows (based on the Simplicit&eacute;&reg; demo application).s
-You will need to change connections settings to your Simplicit&eacute;&reg; instance.
 
 **This is still an incomplete __BETA__ stage module, use at your own risks**
 
