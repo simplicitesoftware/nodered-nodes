@@ -9,7 +9,7 @@ Introduction
 
 These are the NodeRED nodes for the [Simplicit&eacute;&reg; platform](http://www.simplicitesoftware.com).
 
-![Simplicit&eacute;&reg; NodeRED nodes](https://raw.githubusercontent.com/simplicitesoftware/nodered-nodes/master/test.png)
+![Simplicit&eacute;&reg; NodeRED nodes](https://raw.githubusercontent.com/simplicitesoftware/nodered-nodes/master/snapshot.png)
 
 To add these nodes to your NodeRED instance you just need to add this dependency to its `package.json` install it:
 
