@@ -1,41 +1,49 @@
 <script type="text/javascript">
+console.log(RED);
 RED.nodes.registerType("simplicite-config", {
 	category: "config",
 	defaults: {
-		host: { value: "localhost", required: true },
-		port: { value: 8080, required: true, validate: RED.validators.number() },
-		root: { value: "" },
-		user: { value: "designer" },
-		password: { value: "designer" },
+		name: { value: "default", required: true },
+		user: { value: "public", required: true },
+		password: { value: "simplicite", required: true },
+		host: { required: false },
+		port: { required: false },
+		root: { required: false },
 		debug: { value: "false" }
 	},
 	label: function() {
-		return this.host + ":" + this.port;
+		return this.name;
 	}
 });
 </script>
 
 <script type="text/x-red" data-template-name="simplicite-config">
 <div class="form-row">
-	<label for="node-config-input-host"><i class="icon-bookmark"></i> Host</label>
-	<input type="text" id="node-config-input-host">
-</div>
-<div class="form-row">
-	<label for="node-config-input-port"><i class="icon-bookmark"></i> Port</label>
-	<input type="text" id="node-config-input-port">
-</div>
-<div class="form-row">
-	<label for="node-config-input-root"><i class="icon-bookmark"></i> Root</label>
-	<input type="text" id="node-config-input-root">
+	<label for="node-config-input-name"><i class="icon-bookmark"></i> Name</label>
+	<input type="text" placeholder="Instance name" id="node-config-input-name">
 </div>
 <div class="form-row">
 	<label for="node-config-input-user"><i class="icon-bookmark"></i> User</label>
-	<input type="text" id="node-config-input-user">
+	<input type="text" placeholder="User name" id="node-config-input-user">
 </div>
 <div class="form-row">
 	<label for="node-config-input-password"><i class="icon-bookmark"></i> Password</label>
-	<input type="text" id="node-config-input-password">
+	<input type="text" placeholder="Password" id="node-config-input-password">
 </div>
+<hr/>
+<div class="form-row">
+	<label for="node-config-input-host"><i class="icon-bookmark"></i> Host</label>
+	<input type="text" placeholder="Instance host name" id="node-config-input-host">
+</div>
+<div class="form-row">
+	<label for="node-config-input-port"><i class="icon-bookmark"></i> Port</label>
+	<input type="text" placeholder="Instance port" id="node-config-input-port">
+</div>
+<div class="form-row">
+	<label for="node-config-input-root"><i class="icon-bookmark"></i> Root</label>
+	<input type="text" placeholder="Instance root path" id="node-config-input-root">
+</div>
+<hr/>
 <div class="form-row">
 	<label for="node-config-input-debug"><i class="icon-bookmark"></i> Debug</label>
 	<select id="node-config-input-debug">
