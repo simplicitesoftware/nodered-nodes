@@ -13,6 +13,15 @@ RED.nodes.registerType("simplicite-config", {
 	},
 	label: function() {
 		return this.name;
+	},
+	oneditprepare: function() {
+		$.getJSON("simplicite-service").done(function(res) {
+			var fs = [ "host", "port", "root" ];
+			for (var i = 0; i < fs.length; i++) {
+				var f = $("#node-config-input-" + fs[i]);
+				if (f.val() == "") f.val(res[fs[i]]);
+			}
+		});
 	}
 });
 </script>
