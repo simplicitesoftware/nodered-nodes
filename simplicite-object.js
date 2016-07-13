@@ -41,9 +41,8 @@ module.exports = function(RED) {
 						node.send(msg);
 					});
 				} else if (action == "create") {
-					console.log("CREATE");
 					console.log(params);
-					obj.create(params.item, params.parameter).then(function() {
+					obj.create(params.item, params.parameters).then(function() {
 						msg.payload = obj.item;
 						node.send(msg);
 					}, function(e) {
