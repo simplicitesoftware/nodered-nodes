@@ -7,6 +7,7 @@ RED.nodes.registerType("simplicite-config", {
 		password: { value: "simplicite", required: true },
 		host: { required: false },
 		port: { required: false },
+		scheme: { required: false },
 		root: { required: false },
 		debug: { value: "false" }
 	},
@@ -42,6 +43,13 @@ RED.nodes.registerType("simplicite-config", {
 <div class="form-row">
 	<label for="node-config-input-host"><i class="icon-bookmark"></i> Host</label>
 	<input type="text" placeholder="Instance host name" id="node-config-input-host">
+</div>
+<div class="form-row">
+	<label for="node-config-input-scheme"><i class="icon-bookmark"></i> Scheme</label>
+	<select id="node-config-input-scheme">
+		<option value="http">HTTP</option>
+		<option value="https">HTTPS</option>
+	</select>
 </div>
 <div class="form-row">
 	<label for="node-config-input-port"><i class="icon-bookmark"></i> Port</label>
