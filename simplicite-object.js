@@ -27,6 +27,7 @@ module.exports = function(RED) {
 						msg.payload = { count: obj.count, list: obj.list };
 						if (obj.page) msg.payload.page = obj.page;
 						if (obj.maxpage) msg.payload.maxpage = obj.maxpage;
+						if (obj.filters) msg.payload.filters = obj.filters;
 						node.send(msg);
 					}, function(e) {
 						msg.payload = { error: { message: e.message ? e.message : e } };
