@@ -25,8 +25,8 @@ module.exports = function(RED) {
 				} else if (action == "search") {
 					obj.search(params.filters, params.parameters).then(function() {
 						msg.payload = { count: obj.count, list: obj.list };
-						if (obj.page) msg.payload.page = obj.page;
-						if (obj.maxpage) msg.payload.maxpage = obj.maxpage;
+						if (obj.page > 0) msg.payload.page = obj.page;
+						if (obj.maxpage > 0) msg.payload.maxpage = obj.maxpage;
 						if (obj.filters) msg.payload.filters = obj.filters;
 						node.send(msg);
 					}, function(e) {
