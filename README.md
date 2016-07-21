@@ -15,7 +15,15 @@ To add these nodes to your NodeRED instance you just need to add this dependency
 
 ```json
 "dependencies": {
-    "node-red-contrib-simplicite":"latest"
+   "node-red-contrib-simplicite": "latest"
+}
+```
+
+Also make sure that your NodeRED instance use a recent Node.js engine:
+
+```json
+"engines": {
+   "node": ">=4.4"
 }
 ```
 
