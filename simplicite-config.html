@@ -16,7 +16,7 @@ RED.nodes.registerType("simplicite-config", {
 	},
 	oneditprepare: function() {
 		$.getJSON("simplicite-service").done(function(res) {
-			var fs = [ "host", "port", "root" ];
+			var fs = [ "host", "scheme", "port", "root" ];
 			for (var i = 0; i < fs.length; i++) {
 				var f = $("#node-config-input-" + fs[i]);
 				if (f.val() == "") f.val(res[fs[i]]);
@@ -57,7 +57,7 @@ RED.nodes.registerType("simplicite-config", {
 </div>
 <div class="form-row">
 	<label for="node-config-input-root"><i class="icon-bookmark"></i> Root</label>
-	<input type="text" placeholder="Instance root path" id="node-config-input-root">
+	<input type="text" placeholder="Instance root path (if any)" id="node-config-input-root">
 </div>
 <hr/>
 <div class="form-row">
