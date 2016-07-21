@@ -19,7 +19,7 @@ RED.nodes.registerType("simplicite-config", {
 			var fs = [ "host", "scheme", "port", "root" ];
 			for (var i = 0; i < fs.length; i++) {
 				var f = $("#node-config-input-" + fs[i]);
-				if (f.val() == "") f.val(res[fs[i]]);
+				if (!f.val()) f.val(res[fs[i]]);
 			}
 		});
 	}
