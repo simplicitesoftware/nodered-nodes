@@ -22,6 +22,16 @@ module.exports = function(RED) {
 						msg.payload = { error: { message: e.message ? e.message : e } };
 						node.send(msg);
 					});
+				} else if (action == "count") {
+					obj.getCount(params.filters, params.parameters).then(function() {
+						msg.payload = { count: obj.count };
+						if (obj.maxpage > 0) msg.payload.maxpage = obj.maxpage;
+						if (obj.filters) msg.payload.filters = obj.filters;
+						node.send(msg);
+					}, function(e) {
+						msg.payload = { error: { message: e.message ? e.message : e } };
+						node.send(msg);
+					});
 				} else if (action == "search") {
 					obj.search(params.filters, params.parameters).then(function() {
 						msg.payload = { count: obj.count, list: obj.list };

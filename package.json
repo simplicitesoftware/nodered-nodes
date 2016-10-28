@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-simplicite",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Simplicit&eacute;&reg; NodeRED nodes",
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
     "nodes": {
       "simplicite-config": "simplicite-config.js",
       "simplicite-session": "simplicite-session.js",
-	  "simplicite-object": "simplicite-object.js"
+      "simplicite-object": "simplicite-object.js"
     }
   },
   "directories": {
