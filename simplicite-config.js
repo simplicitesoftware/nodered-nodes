@@ -16,7 +16,7 @@ module.exports = function(RED) {
 			port: n.port != "" ? parseInt(n.port) : simpliciteService.port,
 			root: n.root != "" ? n.root : simpliciteService.root,
 			scheme: n.scheme ? n.scheme : simpliciteService.scheme,
-			user: n.user != "" ? n.user : "public",
+			username: n.username != "" ? n.username : "public",
 			password: n.password != "" ? n.password : "simplicite",
 			debug: n.debug == "true"
 		};
