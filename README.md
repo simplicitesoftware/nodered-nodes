@@ -29,7 +29,7 @@ Also make sure that your NodeRED instance use a recent Node.js engine:
 }
 ```
 
-**This is still an incomplete __BETA__ stage module, use at your own risks**
+**This is still an incomplete __BETA__ stage module**
 
 License
 -------
