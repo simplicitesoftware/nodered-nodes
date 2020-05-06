@@ -46,9 +46,6 @@ module.exports = function(RED) {
 						msg.payload = { error: { message: e.message ? e.message : e } };
 						node.send(msg);
 					});
-				/*
-				TODO : other actions
-				*/
 				} else {
 					msg.payload = { error: { message: "Unknow action" } };
 					node.send(msg);

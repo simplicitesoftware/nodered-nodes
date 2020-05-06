@@ -75,7 +75,6 @@ module.exports = function(RED) {
 						msg.payload = { error: { message: e.message ? e.message : e } };
 						node.send(msg);
 					});
-				// TODO : other actions
 				} else {
 					obj.action(action, params.parameters).then(function(res) {
 						msg.payload = res;
