@@ -2,19 +2,19 @@ module.exports = function(RED) {
 	function SimpliciteObject(config) {
 		RED.nodes.createNode(this, config);
 		var node = this;
-		this.on("input", function(msg) {
+		this.on('input', function(msg) {
 			var params = msg.payload;
 			if (!params) params = {};
 			this.server = RED.nodes.getNode(config.server);
 			if (this.server) {
 				var obj = this.server.session.getBusinessObject(config.objectname);
-				var action = "";
+				var action = '';
 				if (config.action) action = config.action;
 				if (params.action) action = params.action;
-				if (action == "") {
+				if (action == '') {
 					msg.payload = obj;
 					node.send(msg);
-				} else if (action == "metadata") {
+				} else if (action == 'metadata') {
 					obj.getMetadata(params.parameters).then(function() {
 						msg.payload = obj.metadata;
 						node.send(msg);
@@ -22,7 +22,7 @@ module.exports = function(RED) {
 						msg.payload = { error: { message: e.message ? e.message : e } };
 						node.send(msg);
 					});
-				} else if (action == "count") {
+				} else if (action == 'count') {
 					obj.getCount(params.filters, params.parameters).then(function() {
 						msg.payload = { count: obj.count };
 						if (obj.maxpage > 0) msg.payload.maxpage = obj.maxpage;
@@ -32,7 +32,7 @@ module.exports = function(RED) {
 						msg.payload = { error: { message: e.message ? e.message : e } };
 						node.send(msg);
 					});
-				} else if (action == "search") {
+				} else if (action == 'search') {
 					obj.search(params.filters, params.parameters).then(function() {
 						msg.payload = { count: obj.count, list: obj.list };
 						if (obj.page > 0) msg.payload.page = obj.page;
@@ -43,7 +43,7 @@ module.exports = function(RED) {
 						msg.payload = { error: { message: e.message ? e.message : e } };
 						node.send(msg);
 					});
-				} else if (action == "get") {
+				} else if (action == 'get') {
 					obj.get(params.row_id, params.parameters).then(function() {
 						msg.payload = obj.item;
 						node.send(msg);
@@ -51,7 +51,7 @@ module.exports = function(RED) {
 						msg.payload = { error: { message: e.message ? e.message : e } };
 						node.send(msg);
 					});
-				} else if (action == "create") {
+				} else if (action == 'create') {
 					obj.create(params.item, params.parameters).then(function() {
 						msg.payload = obj.item;
 						node.send(msg);
@@ -59,15 +59,15 @@ module.exports = function(RED) {
 						msg.payload = { error: { message: e.message ? e.message : e } };
 						node.send(msg);
 					});
-				} else if (action == "update") {
+				} else if (action == 'update') {
 					obj.update(params.item, params.parameters).then(function() {
 						msg.payload = obj.item;
 						node.send(msg);
 					}, function(e) {
 						msg.payload = { error: { message: e.message ? e.message : e } };
 						node.send(msg);
-					})
-				} else if (action == "delete") {
+					});
+				} else if (action == 'delete') {
 					obj.del(params.item, params.parameters).then(function() {
 						msg.payload = {};
 						node.send(msg);
@@ -85,10 +85,10 @@ module.exports = function(RED) {
 					});
 				}
 			} else {
-				msg.payload = { error: { message: "No configuration" } };
+				msg.payload = { error: { message: 'No configuration' } };
 				node.send(msg);
 			}
 		});
 	}
-	RED.nodes.registerType("simplicite-object", SimpliciteObject);
-}
+	RED.nodes.registerType('simplicite-object', SimpliciteObject);
+};
