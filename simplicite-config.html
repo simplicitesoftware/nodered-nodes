@@ -3,12 +3,13 @@ RED.nodes.registerType("simplicite-config", {
 	category: "config",
 	defaults: {
 		name: { value: "default", required: true },
-		username: { value: "public", required: true },
-		password: { value: "simplicite", required: true },
+		username: { required: false },
+		password: {vrequired: false },
 		host: { required: false },
 		port: { required: false },
 		scheme: { required: false },
 		root: { required: false },
+		endpoint: { required: false },
 		debug: { value: "false" }
 	},
 	label: function() {
@@ -58,6 +59,14 @@ RED.nodes.registerType("simplicite-config", {
 <div class="form-row">
 	<label for="node-config-input-root"><i class="icon-bookmark"></i> Root</label>
 	<input type="text" placeholder="Instance root path (if any)" id="node-config-input-root">
+</div>
+<div class="form-row">
+	<label for="node-config-input-endpoint"><i class="icon-bookmark"></i> Endpoint</label>
+	<select id="node-config-input-endpoint">
+		<option value="api">API</option>
+		<option value="ui">UI</option>
+		<option value="public">Public</option>
+	</select>
 </div>
 <hr/>
 <div class="form-row">
