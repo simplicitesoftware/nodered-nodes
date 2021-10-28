@@ -13,11 +13,12 @@
     "node-red"
   ],
   "dependencies": {
-    "cfenv": "latest",
+    "cfenv": "^1.2.4",
     "simplicite": "^2.0.1"
   },
   "devDependencies": {
-    "eslint": "^7.32.0"
+    "eslint": "^7.32.0",
+    "npm-check-updates": "^11.8.5"
   },
   "author": "Simplicite Software <contact@simplicitesoftware.com> (http://www.simplicitesoftware.com/)",
   "license": "Apache-2.0",
@@ -37,6 +38,7 @@
   },
   "main": "simplicite-app.js",
   "scripts": {
-    "lint": "eslint simplicite-*.js"
+    "lint": "eslint simplicite-*.js",
+    "ncu": "ncu"
   }
 }
