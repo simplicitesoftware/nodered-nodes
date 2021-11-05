@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-simplicite",
-  "version": "2.2.7",
+  "version": "2.2.8",
   "description": "Simplicite(R) nodes for NodeRED(R)",
   "repository": {
     "type": "git",
@@ -14,7 +14,7 @@
   ],
   "dependencies": {
     "cfenv": "^1.2.4",
-    "simplicite": "^2.2.7"
+    "simplicite": "^2.2.8"
   },
   "devDependencies": {
     "eslint": "^8.1.0",
