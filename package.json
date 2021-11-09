@@ -1,31 +1,32 @@
 {
   "name": "node-red-contrib-simplicite",
-  "version": "2.2.10",
   "description": "Simplicite(R) nodes for NodeRED(R)",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/simplicitesoftware/nodered-nodes.git"
-  },
+  "version": "2.2.11",
+  "author": "Simplicite Software <contact@simplicitesoftware.com> (https://www.simplicitesoftware.com/)",
+  "license": "Apache-2.0",
   "keywords": [
     "simplicite",
     "simplicitesoftware",
     "apaas",
     "node-red"
   ],
-  "dependencies": {
-    "cfenv": "^1.2.4",
-    "simplicite": "^2.2.10"
-  },
-  "devDependencies": {
-    "eslint": "^8.2.0",
-    "npm-check-updates": "^12.0.0"
-  },
-  "author": "Simplicite Software <contact@simplicitesoftware.com> (http://www.simplicitesoftware.com/)",
-  "license": "Apache-2.0",
+  "homepage": "https://github.com/simplicitesoftware/nodered-nodes",
   "bugs": {
     "url": "https://github.com/simplicitesoftware/nodered-nodes/issues"
   },
-  "homepage": "https://github.com/simplicitesoftware/nodered-nodes",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simplicitesoftware/nodered-nodes.git"
+  },
+  "dependencies": {
+    "cfenv": "^1.2.4",
+    "node-fetch": "^2.6.6",
+    "buffer": "^6.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "npm-check-updates": "^12.0.2"
+  },
   "node-red": {
     "nodes": {
       "simplicite-config": "simplicite-config.js",

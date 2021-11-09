@@ -1,7 +1,10 @@
-node_modules/
+.tern-project
 .scannerwork
+node_modules
+simplicite.js
 **.bak
 **.new
 **.tmp
 **/Thumbs.db
 **/.DS_Store
+node-red-contrib-simplicite-*.tgz

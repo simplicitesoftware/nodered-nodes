@@ -21,7 +21,7 @@ module.exports = function(RED) {
 			debug: n.debug == 'true'
 		};
 		//console.log('Simplicite session parameters = ' + JSON.stringify(params, null, 2));
-		this.session = require('simplicite').default.session(params);
+		this.session = require('./simplicite.js').default.session(params);
 	}
 	RED.nodes.registerType('simplicite-config', SimpliciteConfig);
 };
