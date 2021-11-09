@@ -50,3 +50,5 @@ Deprecate previous version:
 ```bash
 npm deprecate node-red-contrib-simplicite@x.y.z-1 'Deprecated'
 ```
+
+Update version on the [Node RED nodes registry](https://flows.nodered.org/node/node-red-contrib-simplicite).
