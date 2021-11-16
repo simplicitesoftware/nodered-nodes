@@ -1,7 +1,6 @@
 .tern-project
 .scannerwork
 node_modules
-simplicite.js
 **.bak
 **.new
 **.tmp
