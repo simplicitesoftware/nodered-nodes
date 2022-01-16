@@ -16,12 +16,6 @@ Install dependencies:
 npm install
 ```
 
-Copy the **UMD** module from the [Simplicit&eacute;&reg; node.js&reg; &amp; browser JavaScript API](https://github.com/simplicitesoftware/nodejs-api).
-
-```bash
-cp -f ../nodejs-api/dist/umd/simplicite.js .
-```
-
 Check syntax and rules:
 
 ```bash
