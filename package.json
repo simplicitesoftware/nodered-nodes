@@ -23,8 +23,8 @@
     "simplicite": "^2.2.24"
   },
   "devDependencies": {
-    "eslint": "^8.18.0",
-    "npm-check-updates": "^14.1.1"
+    "eslint": "^8.20.0",
+    "npm-check-updates": "^15.3.4"
   },
   "node-red": {
     "nodes": {
