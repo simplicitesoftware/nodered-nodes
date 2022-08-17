@@ -20,11 +20,11 @@
   },
   "dependencies": {
     "cfenv": "^1.2.4",
-    "simplicite": "^2.2.24"
+    "simplicite": "^2.2.25"
   },
   "devDependencies": {
-    "eslint": "^8.20.0",
-    "npm-check-updates": "^15.3.4"
+    "eslint": "^8.22.0",
+    "npm-check-updates": "^16.0.5"
   },
   "node-red": {
     "nodes": {
