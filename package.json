@@ -1,7 +1,7 @@
 {
   "name": "node-red-contrib-simplicite",
   "description": "Simplicite(R) nodes for NodeRED(R)",
-  "version": "2.2.37",
+  "version": "2.3.0",
   "author": "Simplicite Software <contact@simplicitesoftware.com> (https://www.simplicitesoftware.com/)",
   "license": "Apache-2.0",
   "keywords": [
@@ -20,10 +20,10 @@
   },
   "dependencies": {
     "cfenv": "^1.2.4",
-    "simplicite": "^2.2.37"
+    "simplicite": "^2.3.0"
   },
   "devDependencies": {
-    "eslint": "^8.52.0",
+    "eslint": "^8.53.0",
     "npm-check-updates": "^16.14.6"
   },
   "node-red": {
