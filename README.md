@@ -25,7 +25,7 @@ Also make sure that your NodeRED instance use a recent Node.js engine:
 
 ```json
 "engines": {
-   "node": ">=4.4"
+   "node": ">=18"
 }
 ```
 
@@ -34,7 +34,7 @@ Also make sure that your NodeRED instance use a recent Node.js engine:
 License
 -------
 
-Copyright 2014-2021 Simplicit&eacute; Software
+Copyright 2014-2024 Simplicit&eacute; Software
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

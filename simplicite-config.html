@@ -4,23 +4,25 @@ RED.nodes.registerType("simplicite-config", {
 	defaults: {
 		name: { value: "default", required: true },
 		username: { required: false },
-		password: {vrequired: false },
+		password: { required: false },
+		authtoken: { required: false },
 		host: { required: false },
 		port: { required: false },
 		scheme: { required: false },
 		root: { required: false },
-		endpoint: { required: false },
+		endpoint: { value: "api", required: false },
 		debug: { value: "false" }
 	},
 	label: function() {
 		return this.name;
 	},
 	oneditprepare: function() {
-		$.getJSON("simplicite-service").done(function(res) {
-			var fs = [ "host", "scheme", "port", "root" ];
-			for (var i = 0; i < fs.length; i++) {
-				var f = $("#node-config-input-" + fs[i]);
-				if (!f.val()) f.val(res[fs[i]]);
+		$.getJSON("simplicite-service").done(res => {
+			const fs = [ "host", "scheme", "port", "root" ];
+			for (let i = 0; i < fs.length; i++) {
+				const f = $(`#node-config-input-${fs[i]}`);
+				if (!f.val())
+					f.val(res[fs[i]]);
 			}
 		});
 	}
@@ -32,6 +34,7 @@ RED.nodes.registerType("simplicite-config", {
 	<label for="node-config-input-name"><i class="icon-bookmark"></i> Name</label>
 	<input type="text" placeholder="Instance name" id="node-config-input-name">
 </div>
+<hr/>
 <div class="form-row">
 	<label for="node-config-input-username"><i class="icon-bookmark"></i> User</label>
 	<input type="text" placeholder="Username" id="node-config-input-username">
@@ -39,6 +42,11 @@ RED.nodes.registerType("simplicite-config", {
 <div class="form-row">
 	<label for="node-config-input-password"><i class="icon-bookmark"></i> Password</label>
 	<input type="text" placeholder="Password" id="node-config-input-password">
+</div>
+<div class="form-row">or</div>
+<div class="form-row">
+	<label for="node-config-input-authtoken"><i class="icon-bookmark"></i> Token</label>
+	<input type="text" placeholder="Authentication token" id="node-config-input-authtoken">
 </div>
 <hr/>
 <div class="form-row">
@@ -65,7 +73,7 @@ RED.nodes.registerType("simplicite-config", {
 	<select id="node-config-input-endpoint">
 		<option value="api">API</option>
 		<option value="ui">UI</option>
-		<option value="public">Public</option>
+		<option value="public">UI public</option>
 	</select>
 </div>
 <hr/>
