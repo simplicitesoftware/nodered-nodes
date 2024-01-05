@@ -6,7 +6,8 @@ RED.nodes.registerType("simplicite-object", {
 		name: { value: "" },
 		server: { value: "", type: "simplicite-config" },
 		objectname: { value: "", required: true },
-		action: { value: "" }
+		action: { value: "" },
+		actionparam: { value: "" }
 	},
 	inputs: 1,
 	outputs: 1,
@@ -31,23 +32,27 @@ RED.nodes.registerType("simplicite-object", {
 	<input type="text" id="node-input-objectname">
 </div>
 <div class="form-row">
-	<label for="node-input-action"><i class="icon-tag"></i> Action</label>
-	<input type="text" id="node-input-action">
+	<label for="node-input-action"><i class="icon-bookmark"></i> Action</label>
+	<select id="node-input-action">
+		<option value="metadata">Metadata</option>
+		<option value="count">Count</option>
+		<option value="search">Search</option>
+		<option value="get">Get</option>
+		<option value="create">Create</option>
+		<option value="update">Update</option>
+		<option value="delete">Delete</option>
+		<option value="crosstab">Pivot table</option>
+		<option value="action">Custom action</option>
+		<option value="print">Publication</option>
+	</select>
+</div>
+<div class="form-row">
+	<label for="node-input-actionparam"><i class="icon-tag"></i> Action parameter</label>
+	<input type="text" id="node-input-actionparam">
 </div>
 </script>
 
 <script type="text/x-red" data-help-name="simplicite-object">
-<p>A simple node to handle Simplicite(R) business object level actions</p>
-<p>Optional action can be either:
-<ul>
-	<li><b>metadata</b> to get objet metadata</li>
-	<li><b>count</b> to search records based on filters</li>
-	<li><b>search</b> to search records based on filters</li>
-	<li><b>get</b> to get a record</li>
-	<li><b>create</b> to create a new record</li>
-	<li><b>update</b> to update a record</li>
-	<li><b>delete</b> to delete a record</li>
-	<li><b>&lt;custom action name&gt;</b> to call a custom acton</li>
-</ul>
-<p>If no action is specified the full business object data is returned</p>
+<p>A node to handle Simplicite(R) business object-level actions.</p>
+<p>If no action is specified the current full object data is returned.</p>
 </script>

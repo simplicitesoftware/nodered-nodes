@@ -22,7 +22,7 @@ module.exports = function(RED) {
 						msg.payload = { error: { message: e.message ? e.message : e } };
 						node.send(msg);
 					});
-				} else if (action == 'grant') {
+				} else if (action == 'user' || action == 'grant') {
 					session.getGrant(params.parameters).then(grant => {
 						msg.payload = grant;
 						node.send(msg);
@@ -63,7 +63,7 @@ module.exports = function(RED) {
 						node.send(msg);
 					});
 				} else {
-					msg.payload = { error: { message: 'Unknow action' } };
+					msg.payload = { error: { message: `Unknow action ${action}` } };
 					node.send(msg);
 				}
 			} else {

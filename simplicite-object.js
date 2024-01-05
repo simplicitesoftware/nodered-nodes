@@ -14,6 +14,11 @@ module.exports = function(RED) {
 					action = config.action;
 				if (params.action)
 					action = params.action;
+				let actionparam = '';
+				if (config.actionparam)
+					actionparam = config.actionparam;
+				if (params.actionparam)
+					actionparam = params.actionparam;
 				if (action == '') {
 					msg.payload = obj;
 					node.send(msg);
@@ -78,14 +83,51 @@ module.exports = function(RED) {
 						msg.payload = { error: { message: e.message ? e.message : e } };
 						node.send(msg);
 					});
+				} else if (action == 'crosstab') {
+					const name = actionparam || params.name || '';
+					if (name != '') {
+						obj.crosstab(name, params.parameters).then(res => {
+							msg.payload = res;
+							node.send(msg);
+						}, e => {
+							msg.payload = { error: { message: e.message ? e.message : e } };
+							node.send(msg);
+						});
+					} else {
+						msg.payload = { error: { message: 'Missing pivot table name' } };
+						node.send(msg);
+					}
+				} else if (action == 'action') {
+					const name = actionparam || params.name || '';
+					if (name != '') {
+						obj.action(name, params.row_id, params.parameters).then(res => {
+							msg.payload = { result: res };
+							node.send(msg);
+						}, e => {
+							msg.payload = { error: { message: e.message ? e.message : e } };
+							node.send(msg);
+						});
+					} else {
+						msg.payload = { error: { message: 'Missing custom action name' } };
+						node.send(msg);
+					}
+				} else if (action == 'print') {
+					const name = actionparam || params.name || '';
+					if (name != '') {
+						obj.print(name, params.row_id, params.parameters).then(res => {
+							msg.payload = { result: res };
+							node.send(msg);
+						}, e => {
+							msg.payload = { error: { message: e.message ? e.message : e } };
+							node.send(msg);
+						});
+					} else {
+						msg.payload = { error: { message: 'Missing publication name' } };
+						node.send(msg);
+					}
 				} else {
-					obj.action(action, params.parameters).then(res => {
-						msg.payload = res;
-						node.send(msg);
-					}, e => {
-						msg.payload = { error: { message: e.message ? e.message : e } };
-						node.send(msg);
-					});
+					msg.payload = { error: { message: `Unknown action: ${action}` } };
+					node.send(msg);
 				}
 			} else {
 				msg.payload = { error: { message: 'No configuration' } };

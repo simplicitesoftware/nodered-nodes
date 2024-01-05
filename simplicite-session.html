@@ -26,21 +26,19 @@ RED.nodes.registerType("simplicite-session", {
 	<input type="text" id="node-input-server">
 </div>
 <div class="form-row">
-	<label for="node-input-action"><i class="icon-tag"></i> Action</label>
-	<input type="text" id="node-input-action">
+	<label for="node-input-action"><i class="icon-bookmark"></i> Action</label>
+	<select id="node-input-action">
+		<option value="login">Login</option>
+		<option value="user">User data</option>
+		<option value="appinfo">Application info</option>
+		<option value="sysinfo">System info</option>
+		<option value="news">News</option>
+		<option value="logout">logout</option>
+	</select>
 </div>
 </script>
 
 <script type="text/x-red" data-help-name="simplicite-session">
-<p>A simple node to handle Simplicite(R) session level actions</p>
-<p>Optional action can be either:
-<ul>
-	<li><b>login</b> to sign in (only useful if a username/password is provided, useless if an authentication is provided)</li>
-	<li><b>grant</b> to get user grant data</li>
-	<li><b>appsession</b> to get application info</li>
-	<li><b>syssession</b> to get system info</li>
-	<li><b>news</b> to get news</li>
-	<li><b>logout</b> to sign oout</li>
-</ul>
-<p>If no action is specified the full session data is returned</p>
+<p>A node to handle Simplicite(R) session-level actions.</p>
+<p>If no action is specified the default action is login.</p>
 </script>
