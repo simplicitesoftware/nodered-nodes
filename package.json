@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "eslint": "^8.57.0",
-    "npm-check-updates": "^16.14.18"
+    "npm-check-updates": "^16.14.20"
   },
   "engines": {
     "node": ">=18"
