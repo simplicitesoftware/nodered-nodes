@@ -30,6 +30,7 @@
     "node": ">=18"
   },
   "node-red": {
+    "version": ">=2.0.0",
     "nodes": {
       "simplicite-config": "simplicite-config.js",
       "simplicite-session": "simplicite-session.js",
