@@ -41,7 +41,7 @@
     "icons": "icons"
   },
   "scripts": {
-    "lint": "eslint simplicite-*.js",
+    "lint": "eslint *.mjs *.js",
     "ncu": "ncu"
   }
 }
