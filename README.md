@@ -1,17 +1,17 @@
-![Simplicit&eacute; Software](https://platform.simplicite.io/logos/logo250-grey.png)
+![Simplicité Software](https://platform.simplicite.io/logos/logo250-grey.png)
 ***
 
 <a href="https://www.simplicite.io"><img src="https://img.shields.io/badge/author-Simplicite_Software-blue.svg?style=flat-square" alt="Author"></a>&nbsp;<img src="https://img.shields.io/badge/license-Apache--2.0-orange.svg?style=flat-square" alt="License">
 
-Simplicit&eacute;&reg; NodeRED Nodes
+Simplicité&reg; NodeRED Nodes
 ====================================
 
 Introduction
 ------------
 
-These are the NodeRED nodes for the [Simplicit&eacute;&reg; platform](http://www.simplicitesoftware.com).
+These are the NodeRED nodes for the [Simplicité&reg; platform](http://www.simplicitesoftware.com).
 
-![Simplicit&eacute;&reg; NodeRED nodes](https://raw.githubusercontent.com/simplicitesoftware/nodered-nodes/master/snapshot.png)
+![Simplicité&reg; NodeRED nodes](https://raw.githubusercontent.com/simplicitesoftware/nodered-nodes/master/snapshot.png)
 
 To add these nodes to your NodeRED instance you just need to add this dependency to its `package.json` install it:
 
@@ -34,7 +34,7 @@ Also make sure that your NodeRED instance use a recent Node.js engine:
 License
 -------
 
-Copyright 2014-2024 Simplicit&eacute; Software
+Copyright 2014-2024 Simplicité Software
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

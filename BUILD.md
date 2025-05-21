@@ -1,4 +1,4 @@
-![Simplicit&eacute; Software](https://platform.simplicite.io/logos/logo250-grey.png)
+![Simplicité Software](https://platform.simplicite.io/logos/logo250-grey.png)
 * * *
 
 Prepare
