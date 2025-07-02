@@ -22,9 +22,9 @@
     "simplicite": "3.1.4"
   },
   "devDependencies": {
-    "@eslint/js": "9.29.0",
-    "eslint": "9.29.0",
-    "globals": "16.2.0",
+    "@eslint/js": "9.30.1",
+    "eslint": "9.30.1",
+    "globals": "16.3.0",
     "npm-check-updates": "18.0.1"
   },
   "engines": {
