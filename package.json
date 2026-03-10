@@ -25,7 +25,8 @@
     "@eslint/js": "10.0.1",
     "eslint": "10.0.3",
     "globals": "17.4.0",
-    "npm-check-updates": "19.6.3"
+    "npm-check-updates": "19.6.3",
+    "markdownlint-cli2": "0.21.0"
   },
   "engines": {
     "node": ">=18"
@@ -43,6 +44,7 @@
   },
   "scripts": {
     "lint": "eslint *.mjs *.js",
+    "mdlint": "markdownlint-cli2 \"*.md\"",
     "ncu": "ncu"
   }
 }

@@ -1,7 +1,8 @@
 ![Simplicité Software](https://platform.simplicite.io/logos/logo250-grey.png)
 ***
 
-<a href="https://www.simplicite.io"><img src="https://img.shields.io/badge/author-Simplicite_Software-blue.svg?style=flat-square" alt="Author"></a>&nbsp;<img src="https://img.shields.io/badge/license-Apache--2.0-orange.svg?style=flat-square" alt="License">
+[![Author](https://img.shields.io/badge/author-Simplicite_Software-blue.svg?style=flat-square)](https://www.simplicite.io)
+&nbsp;![License](https://img.shields.io/badge/license-Apache--2.0-orange.svg?style=flat-square)
 
 Simplicité&reg; NodeRED Nodes
 ====================================
@@ -29,12 +30,10 @@ Also make sure that your NodeRED instance use a recent Node.js engine:
 }
 ```
 
-**This is still an incomplete __BETA__ stage module**
-
 License
 -------
 
-Copyright 2014-2024 Simplicité Software
+Copyright 2014-2026 Simplicité Software
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

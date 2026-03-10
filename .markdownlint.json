@@ -1,0 +1,13 @@
+{
+    "single-title": false,
+    "first-line-heading": { "allow_preamble": true },
+    "heading-style": { "style": "setext_with_atx" },
+    "no-hard-tabs": { "code_blocks": false },
+    "line-length": { "line_length": 150, "code_block_line_length": 255, "tables": false },
+    "no-alt-text": false,
+    "no-inline-html": { "allowed_elements": [ "br", "iframe", "abbr", "kbd", "details", "summary", "Roadmap", "Tabs", "TabItem" ] },
+    "no-duplicate-heading": { "siblings_only": true },
+    "emphasis-style": { "style": "underscore" },
+    "code-block-style": { "style": "fenced" },
+    "ul-style": { "style": "dash" }
+}
