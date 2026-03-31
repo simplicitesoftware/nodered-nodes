@@ -23,10 +23,10 @@
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
-    "eslint": "10.0.3",
+    "eslint": "10.1.0",
     "globals": "17.4.0",
-    "npm-check-updates": "19.6.3",
-    "markdownlint-cli2": "0.21.0"
+    "npm-check-updates": "19.6.6",
+    "markdownlint-cli2": "0.22.0"
   },
   "engines": {
     "node": ">=18"
